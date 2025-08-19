@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --primary-bg: #0f0f0f;
+  --secondary-bg: #181818;
+  --primary-text: #ffffff;
+  --secondary-text: #aaaaaa;
+  --accent-color: #1db954;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-bg);
+  padding: 14px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.logo:hover {
+  color: var(--primary-text);
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.back-btn:hover {
+  color: var(--primary-text);
+}
+
+/* Player */
+.player-section {
+  display: flex;
+  justify-content: center;
+  background: black;
+  padding: 20px;
+}
+.player-section > div {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Movie list */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.movie-card {
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+.movie-card .thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+}
+.movie-card h3 {
+  padding: 10px;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Episode list vertical */
+.episode-list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+.episode-item {
+  display: flex;
+  gap: 16px;
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.episode-item:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+.episode-thumb {
+  width: 200px;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+.episode-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
+}
+.episode-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.episode-info p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .movie-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .episode-thumb {
+    width: 120px;
+  }
+}
